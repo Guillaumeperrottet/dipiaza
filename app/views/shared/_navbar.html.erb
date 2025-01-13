@@ -1,12 +1,18 @@
 <nav class="navbar">
-  <div class="navbar-logo">
-    <%= image_tag("logo_rouge.jpg", alt: "Dipiaza", class: "logo") %>
-  </div>
-  <ul class="navbar-links">
+  <ul class="navbar-links left-links">
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Notre histoire", notre_histoire_path %></li>
     <li><%= link_to "Nos engagements", nos_engagements_path %></li>
-    <li><%= link_to "Nos restaurants", nos_restaurants_path %></li>
+  </ul>
+  <div class="navbar-logo">
+    <%= image_tag("dipiaza_seul_noir.jpg", alt: "Dipiaza", class: "logo") %>
+  </div>
+  <ul class="navbar-links right-links">
+      <li>
+            <%= link_to nos_restaurants_path, class: "icon-link" do %>
+          <i class="fa fa-map-marker-alt"></i>
+        <% end %>
+    </li>
     <li><%= link_to "Nous rejoindre", nous_rejoindre_path %></li>
   </ul>
 </nav>

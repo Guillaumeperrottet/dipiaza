@@ -1,12 +1,94 @@
-.navbar-lewagon {
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  padding: 30px 30px;
+  background-color: #fff;
+
+  /* Ligne sous la navbar */
+&::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px; /* Ajustez cette valeur pour changer la hauteur de la ligne */
+  background-color: #ccc; /* Couleur de la ligne */
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .logo {
+      max-height: 80px;
+      width: auto;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    padding-right: 50px;
+
+    li {
+      margin: 0 10px;
+
+      a, .icon-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        transition: color 0.3s ease;
+
+        display: flex;
+        align-items: center;
+
+        i {
+          color: #d70000; /* Remplacez par la couleur souhaitée */
+          font-size: 24px; /* Taille de l'icône */
+          transition: color 0.3s ease; /* Animation pour le survol */
+
+          &:hover {
+            color: #333; /* Couleur au survol */
+          }
+        }
+
+        &:hover {
+          color: #d70000;
+        }
+      }
+    }
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+
+      li {
+        margin: 10px 0;
+
+        a {
+          display: block;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
 }
