@@ -1,12 +1,4 @@
-/* Global styles */
-body {
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  background: #fdfdfd;
-  margin: 0;
-  padding: 0;
-}
-
+/* Section des menus */
 .menu-section {
   padding: 20px;
   max-width: 1425px;
@@ -15,6 +7,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px; /* Ajout d'espacement entre les sections */
 }
 
 .menu-header h1 {
@@ -29,30 +22,34 @@ body {
   color: #555;
 }
 
-.menu-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
-}
-
+/* Catégories de menus */
 .menu-category {
-  flex: 1;
-  min-width: 300px;
+  margin-bottom: 30px;
+  padding: 20px;
   background: #ffffff;
   border-radius: 8px;
-  padding: 15px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Titre de catégorie avec icône */
 .menu-category h2 {
   font-size: 1.8rem;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #333;
   border-bottom: 2px solid #c0392b;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacement entre l'icône et le texte */
 }
 
+.menu-category h2 i {
+  color: #c0392b; /* Couleur des icônes */
+  font-size: 1.5rem;
+}
+
+/* Liste des éléments */
 .menu-category ul {
   list-style: none;
   padding: 0;
@@ -61,7 +58,7 @@ body {
 
 .menu-category ul li {
   font-size: 1.2rem;
-  padding: 5px 0;
+  padding: 10px 0;
   border-bottom: 1px dashed #ddd;
 }
 
@@ -69,9 +66,40 @@ body {
   border-bottom: none;
 }
 
+/* Texte des descriptions sous les items */
+.menu-category ul li span {
+  display: block;
+  font-size: 0.9rem; /* Texte plus petit */
+  color: #777; /* Couleur plus claire */
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Note en italique */
 .note {
   font-size: 0.9rem;
   color: #555;
   margin-top: 10px;
   font-style: italic;
+}
+
+/* Responsive : Catégories côte à côte sur grands écrans */
+@media (min-width: 768px) {
+  .menu-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+
+  .menu-category {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+  }
+}
+
+.menu-icon {
+  width: 30px; /* Taille de l'icône */
+  height: 30px;
 }
