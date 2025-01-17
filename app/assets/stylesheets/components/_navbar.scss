@@ -20,6 +20,11 @@
 }
 
 
+.navbar.hidden {
+  transform: translateY(-100%); /* Cache la navbar en la déplaçant vers le haut */
+}
+
+
 .navbar-logo {
   flex: 1;
   display: flex;

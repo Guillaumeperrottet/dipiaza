@@ -9,23 +9,16 @@ window.Stimulus   = application
 export { application }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar"); // Sélectionnez la navbar
-  let lastScrollTop = 0;
-  let isNavbarHidden = false; // État pour éviter des animations inutiles
+  const navbar = document.querySelector(".navbar");
 
+  // Écouter le défilement de la page
   window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScrollTop && !isNavbarHidden) {
-        // Scroll vers le bas
-        navbar.style.transform = "translateY(-100%)"; // Cache la navbar
-        isNavbarHidden = true;
-      } else if (currentScroll < lastScrollTop && isNavbarHidden) {
-        // Scroll vers le haut
-        navbar.style.transform = "translateY(0)"; // Affiche la navbar
-        isNavbarHidden = false;
-      }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Évite les valeurs négatives
+    if (window.scrollY === 0) {
+      // Si la position de défilement est tout en haut, montrer la navbar
+      navbar.classList.remove("hidden");
+    } else {
+      // Sinon, cacher la navbar
+      navbar.classList.add("hidden");
+    }
   });
 });
