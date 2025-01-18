@@ -1,2 +1,18 @@
-<h1>Pages#nos_restaurants</h1>
-<p>Find me in app/views/pages/nos_restaurants.html.erb</p>
+<div data-controller="google-maps" class="cafes-container">
+  <!-- Liste des cafés -->
+  <div class="cafes-list">
+    <div class="cafe" data-id="1" data-lat="46.6165" data-lng="7.0565">
+      <h3>Dipiaza Bulle</h3>
+      <p>Rue de Battentin 1, 1630 Bulle</p>
+      <p>Horaires : 05:30 - 20:00</p>
+    </div>
+    <div class="cafe" data-id="2" data-lat="46.802" data-lng="7.1515">
+      <h3>Dipiaza Yverdon</h3>
+      <p>Place de la Gare, 1400 Yverdon-les-Bains</p>
+      <p>Horaires : 05:30 - 20:00</p>
+    </div>
+  </div>
+
+  <!-- Carte Google Maps -->
+  <div id="map" style="height: 500px; width: 100%;"></div>
+</div>
