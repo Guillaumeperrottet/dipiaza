@@ -50,13 +50,19 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: #c0392b; /* Texte rouge */
+  font-weight: 600; /* Texte plus gras */
+  font-size: 1rem; /* Taille du texte */
+  padding: 10px 20px; /* Ajoute de l'espace interne */
+  border: 2px solid #c0392b; /* Contour rouge */
+  border-radius: 20px; /* Arrondi des coins */
+  transition: all 0.3s ease-in-out; /* Animation fluide */
 }
 
 .navbar-links a:hover {
-  color: #c0392b;
+  background: #c0392b; /* Arrière-plan rouge au survol */
+  color: white; /* Texte blanc au survol */
+  box-shadow: 0px 4px 6px rgba(192, 57, 43, 0.3); /* Ajoute une ombre au survol */
 }
 
 .center-links {
