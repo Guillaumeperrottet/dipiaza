@@ -28,7 +28,7 @@ export default class extends Controller {
 
     const cafes = [
       { id: 1, name: "Dipiaza Bulle", lat: 46.6165, lng: 7.0565 },
-      { id: 2, name: "Dipiaza Fribourg", lat: 46.802, lng: 7.1515 },
+      { id: 2, name: "Dipiaza Yverdon", lat: 46.78135, lng: 6.64049 },
     ];
 
     const map = new google.maps.Map(document.getElementById("map"), {
