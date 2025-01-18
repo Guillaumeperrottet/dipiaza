@@ -1,0 +1,28 @@
+.cafes-container {
+  display: flex;
+  margin-top: 200px;
+}
+
+.cafes-list {
+  width: 30%;
+  padding: 1rem;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.cafe {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.cafe:hover {
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
+}
+
+.cafe.active {
+  border: 2px solid #007bff;
+  background-color: #e6f0ff;
+}

@@ -8,6 +8,7 @@ window.Stimulus   = application
 
 export { application }
 
+// POUR LA NAVBAR
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
 
