@@ -1,28 +1,93 @@
 .cafes-container {
   display: flex;
   margin-top: 200px;
+  gap: 20px;
 }
 
 .cafes-list {
   width: 30%;
+  max-height: 600px;
   padding: 1rem;
   overflow-y: auto;
   border-right: 1px solid #ddd;
+  background-color: #f9f9f9;
+
+  scrollbar-width: thin; /* Pour Firefox */
+  scrollbar-color: #aaa #f9f9f9; /* Couleur de la barre de défilement */
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f9f9f9;
+  }
 }
 
 .cafe {
+  position: relative;
   margin-bottom: 1rem;
   cursor: pointer;
   padding: 0.5rem;
   border: 1px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
 }
 
 .cafe:hover {
   border: 1px solid #aaa;
-  background-color: #f9f9f9;
+  background-color: #e9ecef;
+  transform: scale(1.02); /* Agrandit légèrement */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
 }
 
 .cafe.active {
   border: 2px solid #007bff;
   background-color: #e6f0ff;
+  animation: highlight 0.4s ease; /* Animation personnalisée */
+
+  @keyframes highlight {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
+
+#map {
+  width: 65%; /* Réduit la largeur de la carte */
+  border-radius: 8px; /* Ajoute des coins arrondis pour un style plus moderne */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour démarquer la carte */
+  border: 2px solid #ddd;
+  background-color: #fff;
+}
+
+p {
+  margin: 0;
+}
+
+.directions-icon {
+  position: absolute;
+  top: 0.5rem; /* Distance du haut */
+  right: 0.5rem; /* Distance de la droite */
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.directions-icon:hover {
+  color: #0056b3;
+}
+
+.directions-icon i {
+  vertical-align: middle;
 }

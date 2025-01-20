@@ -6,11 +6,12 @@ export default class extends Controller {
   connect() {
     console.log("Google Maps Controller connecté");
     this.loadGoogleMapsAPI();
+    this.DirectionButtons();
   }
 
   loadGoogleMapsAPI() {
     if (document.querySelector("script[src*='maps.googleapis.com']")) {
-      console.log("Google Maps API déjà chargée");
+      // console.log("Google Maps API déjà chargée");
       return;
     }
 
@@ -24,18 +25,24 @@ export default class extends Controller {
   }
 
   initMap() {
-    console.log("Google Maps API chargé et initMap exécuté");
+    // console.log("Google Maps API chargé et initMap exécuté");
 
     const cafes = [
-      { id: 1, name: "Dipiaza Bulle", lat: 46.6165, lng: 7.0565 },
-      { id: 2, name: "Dipiaza Yverdon", lat: 46.78135, lng: 6.64049 },
+      { id: 1, name: "Dipiaza Aigle", lat: 46.31681173472081, lng: 6.963752838433811 },
+      { id: 2, name: "Dipiaza Bulle", lat: 46.63324, lng: 7.04878 },
+      { id: 3, name: "Dipiaza Sierre", lat: 46.29622, lng: 7.55031 },
+      { id: 4, name: "Dipiaza Yverdon", lat: 46.78135, lng: 6.64049 },
+      { id: 5, name: "Dipiaza de la Souste", lat: 46.30336, lng: 7.65665 },
     ];
 
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 8,
       center: { lat: cafes[0].lat, lng: cafes[0].lng },
       mapId: "b4f4c0c8903d1d38",
+      gestureHandling: "cooperative",
     });
+
+    const markers = [];
 
     cafes.forEach((cafe) => {
       const marker = new google.maps.Marker({
@@ -43,6 +50,7 @@ export default class extends Controller {
         map: map,
         title: cafe.name,
       });
+      markers.push(marker);
 
       marker.addListener("click", () => {
         this.highlightCafe(cafe.id);
@@ -60,7 +68,32 @@ export default class extends Controller {
         map.setCenter({ lat: cafe.lat, lng: cafe.lng });
       });
     });
+
+    // Ajouter les événements de survol
+    document.querySelectorAll(".cafe").forEach((element, index) => {
+      element.addEventListener("mouseover", () => {
+        markers[index].setAnimation(google.maps.Animation.BOUNCE); // Animation de rebond
+        setTimeout(() => markers[index].setAnimation(null), 700); // Arrête après 700ms
+      });
+
+      element.addEventListener("mouseout", () => {
+        markers[index].setAnimation(null); // Supprime l'animation au survol terminé
+      });
+    });
   }
+
+  DirectionButtons() {
+    document.querySelectorAll(".directions-icon").forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+        const lat = event.target.dataset.lat || event.target.parentElement.dataset.lat;
+        const lng = event.target.dataset.lng || event.target.parentElement.dataset.lng;
+        const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+        window.open(googleMapsUrl, "_blank"); // Ouvre dans un nouvel onglet
+      });
+    });
+  }
+
 
   highlightCafe(cafeId) {
     document.querySelectorAll(".cafe").forEach((el) => el.classList.remove("active"));
