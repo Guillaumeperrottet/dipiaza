@@ -1,28 +1,51 @@
-<h1>Pages#nous_rejoindre</h1>
-<p>Find me in app/views/pages/nous_rejoindre.html.erb</p>
+<div class="nous-rejoindre-container">
+  <h1>Nous Rejoindre</h1>
+  <p>Rejoignez notre équipe ! Veuillez remplir le formulaire ci-dessous et télécharger votre CV.</p>
 
-<%= form_with url: "/nous_rejoindre", method: :post, local: true do |form| %>
-  <div>
-    <%= form.label :nom, "Nom"%>
-    <%= form.text_field :nom, require: true %>
+  <div class="form-wrapper">
+    <%= form_with url: "/nous_rejoindre", method: :post, local: true, html: { multipart: true } do |form| %>
+      <div class="form-row">
+        <div class="form-group">
+          <%= form.label :nom, "Nom" %>
+          <%= form.text_field :nom, required: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :prenom, "Prénom" %>
+          <%= form.text_field :prenom, required: true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= form.label :email, "Email" %>
+          <%= form.email_field :email, required: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :telephone, "Téléphone" %>
+          <%= form.telephone_field :telephone, required: true, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group checkbox">
+        <%= form.check_box :etudiant, { class: "form-check-input" }, "Oui", "Non" %>
+        <%= form.label :etudiant, "Étudiant", class: "form-check-label" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :message, "Message" %>
+        <%= form.text_area :message, required: true, rows: 5, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :cv, "Télécharger votre CV" %>
+        <%= form.file_field :cv, required: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Envoyer", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-  <div>
-    <%= form.label :prenom, "Prénom"%>
-    <%= form.text_field :prenom, require: true %>
-  </div>
-  <div>
-    <%= form.label :email, "Email"%>
-    <%= form.email_field :email, require: true %>
-  </div>
-  <div>
-    <%= form.label :telephone, "Téléphone"%>
-    <%= form.text_field :telephone, require: true %>
-  </div>
-  <div>
-    <%= form.label :message, "Message"%>
-    <%= form.text_area :message, require: true %>
-  </div>
-  <div>
-    <%= form.submit "Envoyer" %>
-  </div>
-<%end%>
+</div>
