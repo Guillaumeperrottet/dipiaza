@@ -70,18 +70,24 @@
     }
   }
 
-  .checkbox {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
+/* Alignement horizontal pour les cases à cocher */
+.form-row.checkboxes {
+  display: flex;
+  align-items: center; /* Centre verticalement les cases et labels */
+  gap: 20px; /* Espacement horizontal entre les cases */
+}
 
-    .form-check-input {
-      margin-right: 0.5rem;
-    }
+.form-group.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Espacement entre la case et son label */
+}
 
-    .form-check-label {
-      font-weight: bold;
-      color: #34495e;
-    }
-  }
+.form-check-input {
+  margin: 0; /* Supprime les marges par défaut des checkboxes */
+}
+
+.form-check-label {
+  margin: 0; /* Supprime les marges par défaut des labels */
+}
 }

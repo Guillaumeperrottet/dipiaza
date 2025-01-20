@@ -28,10 +28,18 @@
         </div>
       </div>
 
-      <div class="form-group checkbox">
-        <%= form.check_box :etudiant, { class: "form-check-input" }, "Oui", "Non" %>
-        <%= form.label :etudiant, "Étudiant", class: "form-check-label" %>
+      <div class="form-row checkboxes">
+        <div class="form-group checkbox">
+          <%= form.check_box :etudiant, { class: "form-check-input" }, "Oui", "Non" %>
+          <%= form.label :etudiant, "Étudiant", class: "form-check-label" %>
+        </div>
+
+        <div class="form-group checkbox">
+          <%= form.check_box :employe, { class: "form-check-input" }, "Oui", "Non" %>
+          <%= form.label :employe, "Employé", class: "form-check-label" %>
+        </div>
       </div>
+
 
       <div class="form-group">
         <%= form.label :message, "Message" %>
