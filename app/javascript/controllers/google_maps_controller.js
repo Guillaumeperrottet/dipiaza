@@ -71,13 +71,23 @@ export default class extends Controller {
 
     // Ajouter les événements de survol
     document.querySelectorAll(".cafe").forEach((element, index) => {
-      element.addEventListener("mouseover", () => {
-        markers[index].setAnimation(google.maps.Animation.BOUNCE); // Animation de rebond
-        setTimeout(() => markers[index].setAnimation(null), 700); // Arrête après 700ms
+      let hasBounced = false; // Garde une trace si l'animation a déjà eu lieu
+
+      element.addEventListener("mouseenter", () => {
+        if (!hasBounced) {
+          const marker = markers[index];
+          marker.setAnimation(google.maps.Animation.BOUNCE); // Lance l'animation
+
+          // Arrête l'animation après 1 rebond (~700ms)
+          setTimeout(() => {
+            marker.setAnimation(null);
+            hasBounced = true; // Marque l'animation comme effectuée
+          }, 700);
+        }
       });
 
-      element.addEventListener("mouseout", () => {
-        markers[index].setAnimation(null); // Supprime l'animation au survol terminé
+      element.addEventListener("mouseleave", () => {
+        hasBounced = false; // Réinitialise l'état lorsque la souris quitte la div
       });
     });
   }
