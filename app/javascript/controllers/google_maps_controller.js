@@ -15,10 +15,13 @@ export default class extends Controller {
       return;
     }
 
+    // Récupérer la clé API depuis window.googleMapsApiKey
+    const apiKey = window.googleMapsApiKey;
+
     window.initMap = this.initMap.bind(this);
 
     const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAOO96yETIkw_pFBk80_iQD37srW6ZT9KU&callback=initMap&libraries=marker`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=marker`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);

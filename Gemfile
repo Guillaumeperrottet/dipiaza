@@ -49,6 +49,14 @@ gem "font-awesome-sass", "~> 6.1"
 gem 'simple_form'
 gem "autoprefixer-rails"
 gem "sassc-rails"
+gem 'cloudinary'
+gem 'activestorage-cloudinary-service'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'activestorage', '~> 7.1'
+
+
+
+gem 'pg', group: :production
 
 
 group :development, :test do

@@ -29,6 +29,20 @@ Rails.application.configure do
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV['SMTP_HOST'],
+    port: ENV['SMTP_PORT'],
+    domain: 'dipiaza.ch',
+    user_name: ENV['SMTP_USERNAME'],
+    password: ENV['SMTP_PASSWORD'],
+    authentication: :login,
+    ssl: true, # Active SSL pour le port 465
+    enable_starttls_auto: true # Définit à true pour TLS
+  }
+
+  config.action_mailer.default_options = { from: 'contact@dipiaza.com' }
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
@@ -37,7 +51,10 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # config.active_storage.service = :local
+
+  config.active_storage.service = :cloudinary
+
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
