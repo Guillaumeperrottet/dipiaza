@@ -75,7 +75,44 @@
 }
 
 .hero-image img {
-  max-width: 70%;
+  max-width: 90%;
   height: auto;
   border-radius: 10px;
+}
+
+
+.our-story-preview {
+  background-color: #ffffff; // Couleur claire (par exemple beige clair)
+  padding: 25rem 2rem;
+  text-align: center;
+
+  .section-title {
+    font-family: 'Dancing Script', cursive; // Assurez-vous d'importer cette police
+    font-size: 2.5rem;
+    color: #4a3f35; // Couleur foncée (par exemple brun)
+    margin-bottom: 1rem;
+  }
+
+  .story-snippet {
+    font-family: 'Lora', serif; // Style élégant et lisible
+    font-size: 1.2rem;
+    color: #5a5a5a; // Gris neutre pour le texte
+    margin-bottom: 2rem;
+  }
+
+  .btn-story {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #c0392b;
+      color: white;
+    }
+  }
 }
