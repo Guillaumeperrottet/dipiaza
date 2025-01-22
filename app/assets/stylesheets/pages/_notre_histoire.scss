@@ -60,3 +60,63 @@
     margin: 40px 0;
   }
 }
+
+.join-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px; /* Ajusté pour éviter une section trop vide */
+  margin-top: 40px;
+  position: relative;
+  background: linear-gradient(135deg, #fff, #f7f7f7); /* Dégradé doux */
+  /* Ou une texture avec une image légère */
+  background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+  background-size: cover;
+
+  .join-title {
+    font-size: 2.5rem;
+    color: #C0392B;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 20px;
+  }
+
+  .btn-join {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #C0392B;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #A93226; /* Couleur légèrement plus sombre au survol */
+    }
+  }
+
+  .image-container {
+    position: absolute;
+    bottom: -40px; /* Position ajustée */
+    right: 40px; /* Plus proche du bord */
+    max-width: 150px; /* Taille maximale fixe */
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .join-us {
+    padding: 60px 10px;
+
+    .image-container {
+      position: static; /* Relâche la position absolue */
+      margin-top: 20px; /* Espace ajouté pour l'image */
+    }
+  }
+}
