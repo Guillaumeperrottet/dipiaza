@@ -3,7 +3,7 @@
   padding: 20px;
   max-width: 1550px;
   margin: 0 auto;
-  background: #fafafa;
+  background: #EAE3D1;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -11,9 +11,11 @@
 }
 
 .menu-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   text-align: center;
   color: #c0392b;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
 }
 
 .menu-header p {
@@ -26,9 +28,13 @@
 .menu-category {
   margin-bottom: 30px;
   padding: 20px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background: #EAE3D1;
+
+  img{
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
 }
 
 /* Titre de catégorie avec icône */
@@ -36,17 +42,13 @@
   font-size: 1.8rem;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #333;
-  border-bottom: 2px solid #c0392b;
+  color: #EAE3D1;
+  background-color: #333;
   padding-bottom: 5px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   gap: 10px; /* Espacement entre l'icône et le texte */
-}
-
-.menu-category h2 i {
-  color: #c0392b; /* Couleur des icônes */
-  font-size: 1.5rem;
 }
 
 /* Liste des éléments */
@@ -59,7 +61,6 @@
 .menu-category ul li {
   font-size: 1.2rem;
   padding: 10px 0;
-  border-bottom: 1px dashed #ddd;
 }
 
 .menu-category ul li:last-child {
@@ -81,6 +82,15 @@
   color: #555;
   margin-top: 10px;
   font-style: italic;
+  border-top: 1px dashed #333; /* Ligne en pointillés */
+  padding-top: 10px; /* Espacement avec la ligne */
+  margin-top: 10px; /* Espacement avec l'élément suivant */
+}
+
+.dotted-line{
+  border-bottom: 1px dashed #333; /* Ligne en pointillés */
+  padding-bottom: 10px; /* Espacement avec la ligne */
+  margin-bottom: 10px; /* Espacement avec l'élément suivant */
 }
 
 /* Responsive : Catégories côte à côte sur grands écrans */
@@ -97,9 +107,4 @@
     min-width: 300px;
     max-width: 45%;
   }
-}
-
-.menu-icon {
-  width: 30px; /* Taille de l'icône */
-  height: 30px;
 }

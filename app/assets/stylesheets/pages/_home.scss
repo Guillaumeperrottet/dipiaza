@@ -45,27 +45,6 @@
   color: white;
 }
 
-
-/* -- Pour bouton rouge
-.vertical-menu a {
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #FD2B11;
-
-  margin: 10px 0;
-  padding: 10px 20px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.vertical-menu a:hover {
-  background-color: #ffffff;
-  color: black;
-}
-*/
-
 /* Hero Image */
 .hero-image {
   flex: 2;
@@ -101,6 +80,43 @@
   }
 
   .btn-story {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #333;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #c0392b;
+      color: white;
+    }
+  }
+}
+
+/* Section Nos Engagements */
+.commitments-preview {
+  background-color: #f9f9f9; // Couleur légèrement différente pour distinguer la section
+  padding: 5rem 2rem;
+  text-align: center;
+
+  .section-title {
+    font-family: 'Dancing Script', cursive; // Assurez-vous que cette police est déjà importée
+    font-size: 2.5rem;
+    color: #C0392B; // Même couleur que la section Notre Histoire
+    margin-bottom: 1rem;
+  }
+
+  .commitments-snippet {
+    font-family: 'Lora', serif; // Cohérence avec la section précédente
+    font-size: 1.2rem;
+    color: #5a5a5a;
+    margin-bottom: 2rem;
+  }
+
+  .btn-commitments {
     font-size: 1.2rem;
     text-decoration: none;
     color: #333;
