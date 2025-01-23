@@ -3,7 +3,7 @@
   <div class="homepage-container">
     <!-- Vertical Menu Section -->
     <div class="vertical-menu">
-      <a href="#menu">Menu</a>
+      <a href="/menus/menu-dipiaza.pdf" target="_blank">Menu</a>
       <a href="#values">Nos valeurs</a>
       <a href="#about">Notre histoire</a>
     </div>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<!-- Section nourriture -->
+<%# <!-- Section nourriture -->
 <section id="menu" class="menu-section">
   <div class="menu-header">
 
@@ -241,14 +241,14 @@
       </ul>
     </div>
   </div>
-</section>
+</section> %>
 
-<!-- Section nos valeurs -->
+<!-- Section Nos valeurs -->
 <section id="values" class="our-values-preview">
-  <div class="values-image">
+  <div class="values-image slide-up">
     <img src="https://res.cloudinary.com/dafkgjhwt/image/upload/v1737561260/AB96E667-A2E9-4A55-B530-3C499E65FAC7_1_201_a_zu6cg0.jpg" alt="Delicious food at Dipiaza">
   </div>
-  <div class="container-our-values">
+  <div class="container-our-values slide-up">
     <div class="accent-divider"></div>
     <h2 class="section-title">Nos Valeurs</h2>
     <p class="values-snippet">
@@ -258,9 +258,9 @@
   </div>
 </section>
 
-<!-- Section notre histoire -->
+<!-- Section Notre histoire -->
 <section id="about" class="our-story-preview">
-  <div class="container-our-story">
+  <div class="container-our-story slide-up">
     <div class="accent-divider"></div>
     <h2 class="section-title">Notre Histoire</h2>
     <p class="story-snippet">
@@ -268,7 +268,42 @@
     </p>
     <a href="/notre_histoire" class="btn-story">Découvrir notre histoire</a>
   </div>
-  <div class="about-image">
+  <div class="about-image slide-up">
     <img src="https://res.cloudinary.com/dafkgjhwt/image/upload/v1737561260/AB96E667-A2E9-4A55-B530-3C499E65FAC7_1_201_a_zu6cg0.jpg" alt="Delicious food at Dipiaza">
   </div>
 </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const options = {
+    threshold: 0.1, // Déclenche quand 10% de l'élément est visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const delay = target.dataset.delay || 0; // Récupère le délai éventuel
+
+        // Applique un délai progressif pour l'animation
+        setTimeout(() => {
+          target.classList.add("show");
+        }, delay);
+
+        observer.unobserve(entry.target); // Arrête d'observer cet élément
+      }
+    });
+  }, options);
+
+  // Sélectionne tous les éléments avec la classe slide-up
+  const elementsToAnimate = document.querySelectorAll(".slide-up");
+
+  // Ajoute un délai progressif (100ms entre chaque élément)
+  elementsToAnimate.forEach((el, index) => {
+    el.dataset.delay = index * 300; // Chaque élément a un délai de 100ms * son index
+    observer.observe(el);
+  });
+});
+
+</script>

@@ -223,3 +223,27 @@
     }
   }
 }
+
+/* Animations pour le scroll */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation d'apparition depuis le bas */
+.slide-up {
+  opacity: 0;
+  transform: translateY(80px); /* Position initiale sous l'écran */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0); /* Position finale */
+}
