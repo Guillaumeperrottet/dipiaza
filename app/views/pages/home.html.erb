@@ -79,39 +79,39 @@
   });
 
   document.addEventListener("scroll", () => {
-  const scrollY = window.scrollY || window.pageYOffset; // Position de défilement
-  const homepage = document.querySelector(".homepage");
+    const scrollY = window.scrollY || window.pageYOffset; // Position de défilement
+    const homepage = document.querySelector(".homepage");
 
-   if (scrollY > 50) {
-    homepage.classList.add("scrolled");
-  } else {
-    homepage.classList.remove("scrolled");
-  }
-
-  // Calculer l'opacité en fonction de la position de défilement
-  let opacity = 1 - scrollY / 1000; // Ajuste "1000" pour contrôler la vitesse de l'effet
-  if (opacity < 0.5) opacity = 0.5; // Opacité minimale
-  homepage.style.backgroundColor = `rgba(0, 0, 0, ${1 - opacity})`; // Ajouter un effet de fondu
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-      // Si on défile vers le bas et qu'on dépasse 100px
-      navbar.classList.add("show");
+    if (scrollY > 50) {
+      homepage.classList.add("scrolled");
     } else {
-      // Si on remonte ou si on est en haut
-      navbar.classList.remove("show");
+      homepage.classList.remove("scrolled");
     }
 
-    lastScrollY = currentScrollY; // Mettre à jour la position du scroll
+    // Calculer l'opacité en fonction de la position de défilement
+    let opacity = 1 - scrollY / 1000; // Ajuste "1000" pour contrôler la vitesse de l'effet
+    if (opacity < 0.5) opacity = 0.5; // Opacité minimale
+    homepage.style.backgroundColor = `rgba(0, 0, 0, ${1 - opacity})`; // Ajouter un effet de fondu
   });
-});
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        // Si on défile vers le bas et qu'on dépasse 100px
+        navbar.classList.add("show");
+      } else {
+        // Si on remonte ou si on est en haut
+        navbar.classList.remove("show");
+      }
+
+      lastScrollY = currentScrollY; // Mettre à jour la position du scroll
+    });
+  });
 
 
 </script>

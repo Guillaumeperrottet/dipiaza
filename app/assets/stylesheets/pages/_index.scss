@@ -7,3 +7,6 @@
 @import "nous_rejoindre";
 @import "notre_histoire";
 @import "nos_valeurs";
+@media only screen and (max-width: 768px) {
+  @import "pages/home_mobile";
+}
