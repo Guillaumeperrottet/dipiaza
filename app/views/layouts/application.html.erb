@@ -20,11 +20,11 @@
   </head>
 
   <body>
-    <% if request.variant == :mobile %>
-      <%= render 'pages/navbar_mobile' %>
-    <% else %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+<% if request.variant == :mobile %>
+  <p>Navbar Mobile Rendered</p>
+<% else %>
+  <p>Navbar Desktop Rendered</p>
+<% end %>
 
     <%= yield %>
 
