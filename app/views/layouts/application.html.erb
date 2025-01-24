@@ -21,13 +21,8 @@
 
   <body>
 
-    <% if request.variant == :mobile %>
-        <%= render 'shared/navbar_mobile' %>
-        <p>Navbar Mobile Rendered</p>
-    <% else %>
-        <%= render 'shared/navbar' %>
-        <p>Navbar Desktop Rendered</p>
-    <% end %>
+<%= render 'shared/navbar' %>
+
 
     <%= yield %>
 
