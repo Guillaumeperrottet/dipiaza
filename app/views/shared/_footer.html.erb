@@ -8,8 +8,8 @@
     <div class="footer__section">
       <h4>Nous contacter</h4>
       <ul>
-        <li><a href="mailto:contact@dipiaza.com">contact@dipiaza.com</a></li>
-        <li><a href="tel:+41234567890">+41 23 456 78 90</a></li>
+        <li><a href="mailto:ap@campus-gerance.ch">ap@campus-gerance.ch</a></li>
+        <li><a href="tel:+41794667005">+41 79 466 70 05</a></li>
         <li>Rue de Battentin 1, 1630 Bulle</li>
       </ul>
     </div>
@@ -17,9 +17,11 @@
     <div class="footer__section">
       <h4>Suivez-nous</h4>
       <ul class="footer__socials">
-        <li><a href="#" target="_blank">Facebook</a></li>
-        <li><a href="#" target="_blank">Instagram</a></li>
-        <li><a href="#" target="_blank">LinkedIn</a></li>
+        <li>
+          <a href="https://www.linkedin.com/company/campus-g%C3%A9rance/" target="_blank">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> Campus Gérance
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -31,16 +33,15 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-  const footer = document.querySelector(".footer");
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        footer.classList.add("visible");
-      }
-    },
-    { threshold: 0.1 } // Se déclenche quand 10% du footer est visible
-  );
-  observer.observe(footer);
-});
-
+    const footer = document.querySelector(".footer");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("visible");
+        }
+      },
+      { threshold: 0.1 } // Se déclenche quand 10% du footer est visible
+    );
+    observer.observe(footer);
+  });
 </script>
