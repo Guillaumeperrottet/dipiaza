@@ -1,11 +1,12 @@
 <nav class="navbar" data-controller="navbar">
   <div class="navbar-logo">
     <%= link_to root_path do %>
-      <%= image_tag("logo_rouge.jpg", alt: "Dipiaza", class: "logo") %>
+      <%= image_tag("logo_rouge.png", alt: "Dipiaza", class: "logo") %>
     <% end %>
   </div>
   <ul class="navbar-links center-links">
-    <li><%= link_to "Nous trouver", nos_restaurants_path %></li>
-    <li><%= link_to "Nous rejoindre", nous_rejoindre_path %></li>
+    <a href="/menus/menu-dipiaza.pdf" target="_blank">Menu</a>
+    <li><a href="/nos_restaurants">Nous trouver</a></li>
+    <li><a href="/nous_rejoindre">Nous rejoindre</a></li>
   </ul>
 </nav>

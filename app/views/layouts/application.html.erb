@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <script>
       window.googleMapsApiKey = "<%= ENV['GOOGLE_MAPS_API_KEY'] %>";
   </script>
@@ -20,5 +22,15 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // Durée des animations
+        easing: 'ease-in-out', // Type d'animation
+        once: true // Animation jouée une seule fois
+      });
+    </script>
+
   </body>
 </html>

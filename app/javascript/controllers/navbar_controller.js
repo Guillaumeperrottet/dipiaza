@@ -1,12 +1,16 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["navbar"]; // Définit les cibles pour Stimulus
-
   connect() {
     console.log("Navbar Controller connecté");
 
-    // Associe un événement de défilement à la fenêtre
+    // Dernière position de défilement
+    this.lastScrollPosition = 0;
+
+    // Cacher la navbar par défaut
+    this.element.classList.add("hidden");
+
+    // Associe l'événement de défilement à la fenêtre
     window.addEventListener("scroll", this.toggleNavbar.bind(this));
   }
 
@@ -16,13 +20,19 @@ export default class extends Controller {
   }
 
   toggleNavbar() {
-    const navbar = this.element; // Référence à l'élément racine contrôlé (navbar)
-    if (window.scrollY === 0) {
-      // Si la position de défilement est tout en haut, montrer la navbar
-      navbar.classList.remove("hidden");
-    } else {
-      // Sinon, cacher la navbar
-      navbar.classList.add("hidden");
+    const currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition > this.lastScrollPosition) {
+      // Défilement vers le bas : montrer la navbar
+      this.element.classList.add("visible");
+      this.element.classList.remove("hidden");
+    } else if (currentScrollPosition < this.lastScrollPosition) {
+      // Défilement vers le haut : cacher la navbar
+      this.element.classList.add("hidden");
+      this.element.classList.remove("visible");
     }
+
+    // Mettre à jour la dernière position de défilement
+    this.lastScrollPosition = currentScrollPosition;
   }
 }

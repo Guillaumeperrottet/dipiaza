@@ -1,22 +1,37 @@
+
 /* General Styles */
 
 .homepage {
   width: 100%;
   padding-top: 200px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #FFFFFF;
+  background-image: url('https://res.cloudinary.com/dafkgjhwt/image/upload/v1737637249/2background_qirjiq.jpg');
+  background-size: 100%;
+  transition: background-size 0.5s background-color 0.3s ease-out; // Transition douce pour l'opacité
+  background-attachment: fixed; // Parallax léger
+
+    .homepage.scrolled {
+      background-size: 110%; // Zoom léger au défilement
+    }
+
+    .homepage-container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .logo-image img {
+        margin-bottom: 200px;
+        margin-right: 37px;
+        width: 100%;
+    }
 }
 
-.homepage-container {
-  display: flex;
-  width: 90%;
-  max-width: 1200px;
-}
 
 /* Vertical Menu */
 .vertical-menu {
@@ -25,14 +40,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-right: 20px;
 }
 
 /* Pour bouton en blanc*/
 .vertical-menu a {
   font-size: 1.2rem;
   text-decoration: none;
-  color: #333;
+  color: #fff;
+  background-color: #c0392b;
   margin: 10px 0;
   padding: 10px 20px;
   border: 2px solid #333;
@@ -45,29 +60,16 @@
   color: white;
 }
 
-/* Hero Image */
-.hero-image {
-  flex: 2;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-.hero-image img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
-}
-
 /* Section Nos valeurs */
 .our-values-preview {
   background-color: #ffffff; // Couleur claire (par exemple beige clair)
-  padding: 15rem 2rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
   text-align: center;
   display: flex;
   align-items: center;
 
-  .accent-divider {
+  .accent-divider-value {
     background-color: #C0392B;
     width: 100%;
     max-width: 80px;
@@ -80,9 +82,9 @@
   }
 
   .section-title {
-    font-family: 'Dancing Script', cursive; // Assurez-vous d'importer cette police
+    font-family: Inter,sans-serif;
     font-size: 2.5rem;
-    color: #C0392B; // Couleur foncée (par exemple brun)
+    color: #C0392B;
     margin-bottom: 1rem;
     text-align: left;
     margin-top: 39px;
@@ -144,17 +146,20 @@
 /* Section Notre histoire */
 .our-story-preview {
   background-color: #ffffff; // Couleur claire (par exemple beige clair)
-  padding: 15rem 2rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  .accent-divider {
+  .accent-divider-story {
     background-color: #C0392B;
     width: 100%;
     max-width: 80px;
     height: 3px;
+    margin-left: auto;
 }
 
   .container-our-story{
@@ -163,7 +168,7 @@
   }
 
   .section-title {
-    font-family: 'Dancing Script', cursive; // Assurez-vous d'importer cette police
+    font-family: Inter, sans-serif; // Assurez-vous d'importer cette police
     font-size: 2.5rem;
     color: #C0392B; // Couleur foncée (par exemple brun)
     margin-bottom: 1rem;
@@ -227,8 +232,8 @@
 /* Animations pour le scroll */
 .fade-in-up {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease-out, transform 0.4s ease-out;
 }
 
 .fade-in-up.show {
@@ -239,11 +244,21 @@
 /* Animation d'apparition depuis le bas */
 .slide-up {
   opacity: 0;
-  transform: translateY(80px); /* Position initiale sous l'écran */
+  transform: translateY(40px); /* Position initiale sous l'écran */
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .slide-up.show {
   opacity: 1;
   transform: translateY(0); /* Position finale */
+}
+
+.parallax {
+  position: relative;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
+}
+
+.parallax.show {
+  transform: translateY(-15x); /* Décalage subtil vers le haut */
 }

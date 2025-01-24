@@ -1,0 +1,82 @@
+.parallax-our-story {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  .parallax-overlay-our-story {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); // Assombrit légèrement l'image pour rendre le texte lisible
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+
+  .parallax-title-our-story {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    margin-bottom: 0.5rem;
+  }
+
+  .parallax-subtitle-our-story {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+.container {
+  margin-top: 100px; // Espace pour la navbar
+}
+
+.timeline {
+  margin: 2rem 0;
+  border-left: 3px solid #C0392B;
+  padding-left: 1.5rem;
+
+  .timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background-color: #C0392B;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+  }
+
+  .timeline-date {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #C0392B;
+  }
+}
+
+.btn-primary {
+  background-color: #C0392B;
+  border-color: #C0392B;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#C0392B, 10%);
+    transform: translateY(-3px);
+  }
+}
