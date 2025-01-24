@@ -1,13 +1,13 @@
-<nav class="mobile-navbar">
+<nav class="mobile-navbar" data-controller="navbar">
   <div class="mobile-navbar__logo">
-    <img src="app/assets/images/logo_rouge.jpg" alt="Logo Dipiaza">
+    <img src="path/to/your/logo.png" alt="Dipiaza Logo">
   </div>
-  <button class="mobile-navbar__toggle">
+  <button class="mobile-navbar__toggle" data-action="click->navbar#toggleMenu" data-navbar-target="toggleButton">
     <span></span>
     <span></span>
     <span></span>
   </button>
-  <div class="mobile-navbar__menu">
+  <div class="mobile-navbar__menu hidden" data-navbar-target="menu">
     <ul>
       <li><a href="/">Accueil</a></li>
       <li><a href="/notre-histoire">Notre Histoire</a></li>
@@ -17,14 +17,3 @@
     </ul>
   </div>
 </nav>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.querySelector('.mobile-navbar__toggle');
-    const menu = document.querySelector('.mobile-navbar__menu');
-
-    toggleButton.addEventListener('click', () => {
-      menu.classList.toggle('mobile-navbar__menu--active');
-    });
-  });
-</script>

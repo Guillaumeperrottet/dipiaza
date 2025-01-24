@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-static targets = ["menu"];
+  static targets = ["menu", "toggleButton"];
 
   connect() {
     console.log("Navbar Controller connecté");
@@ -39,8 +39,7 @@ static targets = ["menu"];
   }
 
   toggleMenu() {
-    // Ajoute/retire la classe "show" pour afficher/masquer les liens en mode mobile
-    this.menuTarget.classList.toggle("show");
-    this.menuTarget.classList.toggle("hidden");
+    // Ajoute/retire les classes pour afficher/masquer le menu mobile
+    this.menuTarget.classList.toggle("mobile-navbar__menu--active");
   }
 }
