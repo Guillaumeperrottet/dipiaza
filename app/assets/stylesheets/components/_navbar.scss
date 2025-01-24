@@ -14,6 +14,7 @@
   transform: translateY(-100%); /* Navbar cachée initialement */
   transition: transform 0.5s ease-in-out; /* Animation fluide */
   z-index: 1000;
+  flex-wrap: wrap; /* Permet de gérer les éléments sur plusieurs lignes */
 }
 
 
@@ -78,4 +79,38 @@
 
 .navbar.always-visible {
   transform: translateY(0); /* Navbar toujours visible */
+}
+
+// POur téléphone
+
+.navbar-toggle {
+  display: none; /* Cacher par défaut */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.navbar-links.hidden {
+  display: none; /* Cacher les liens */
+}
+
+.navbar-links.show {
+  display: flex;
+  flex-direction: column; /* Liens empilés sur mobile */
+  gap: 10px;
+  width: 100%; /* Occupe tout l'espace disponible */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between; /* Espace entre logo et menu */
+  }
+
+  .navbar-toggle {
+    display: block; /* Afficher le bouton hamburger */
+  }
+
+  .navbar-links {
+    display: none; /* Cacher les liens de navigation par défaut */
+  }
 }

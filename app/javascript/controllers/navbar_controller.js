@@ -1,6 +1,8 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
+static targets = ["menu"];
+
   connect() {
     console.log("Navbar Controller connecté");
 
@@ -34,5 +36,11 @@ export default class extends Controller {
 
     // Mettre à jour la dernière position de défilement
     this.lastScrollPosition = currentScrollPosition;
+  }
+
+  toggleMenu() {
+    // Ajoute/retire la classe "show" pour afficher/masquer les liens en mode mobile
+    this.menuTarget.classList.toggle("show");
+    this.menuTarget.classList.toggle("hidden");
   }
 }
