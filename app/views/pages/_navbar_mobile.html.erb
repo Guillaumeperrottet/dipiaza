@@ -1,0 +1,30 @@
+<nav class="mobile-navbar">
+  <div class="mobile-navbar__logo">
+    <img src="app/assets/images/logo_rouge.jpg" alt="Logo Dipiaza">
+  </div>
+  <button class="mobile-navbar__toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="mobile-navbar__menu">
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/notre-histoire">Notre Histoire</a></li>
+      <li><a href="/nos-engagements">Nos Engagements</a></li>
+      <li><a href="/nos-restaurants">Nos Restaurants</a></li>
+      <li><a href="/nous-rejoindre">Nous Rejoindre</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.mobile-navbar__toggle');
+    const menu = document.querySelector('.mobile-navbar__menu');
+
+    toggleButton.addEventListener('click', () => {
+      menu.classList.toggle('mobile-navbar__menu--active');
+    });
+  });
+</script>
