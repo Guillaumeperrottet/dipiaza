@@ -1,4 +1,4 @@
-<nav class="navbar <%= 'always-visible' if current_page?(nos_restaurants_path) %>" data-controller="navbar">
+<nav class="navbar <%= 'always-visible' if current_page?(nos_restaurants_path) || current_page?(nous_rejoindre_path)%>" data-controller="navbar">
   <div class="navbar-logo">
     <%= link_to root_path do %>
       <%= image_tag("logo_rouge.jpg", alt: "Dipiaza", class: "logo") %>

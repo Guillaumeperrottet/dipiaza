@@ -1,0 +1,61 @@
+.footer {
+  background-color: #C0392B; // Rouge vif de Dipiaza
+  color: white;
+  padding: 3rem 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__section {
+    flex: 1;
+    min-width: 200px;
+
+    h4 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s;
+
+          &:hover {
+            color: #ecf0f1; // Gris clair pour le hover
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
