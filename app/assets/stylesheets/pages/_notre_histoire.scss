@@ -1,3 +1,7 @@
+.parallax {
+  height: 70vh; // Augmente la hauteur pour plus d’impact visuel
+}
+
 .parallax-our-story {
   position: relative;
   background-attachment: fixed;
@@ -34,17 +38,19 @@
 }
 
 .container {
-  margin-top: 100px; // Espace pour la navbar
+  margin-top: 120px; // Augmente le top pour prendre en compte la navbar
+  margin-bottom: 80px; // Ajoute de l’espace en bas de la page
 }
 
 .timeline {
-  margin: 2rem 0;
+  margin: 4rem 0;
   border-left: 3px solid #C0392B;
   padding-left: 1.5rem;
 
   .timeline-item {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     position: relative;
+    padding-left: 1.5em;
 
     &:before {
       content: "";
@@ -74,9 +80,15 @@
   font-size: 1rem;
   border-radius: 30px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 2rem; // Ajoute de l’espace sous le contenu
 
   &:hover {
     background-color: darken(#C0392B, 10%);
     transform: translateY(-3px);
   }
+}
+
+.img-fluid {
+  max-width: 65%;
+  height: auto;
 }
