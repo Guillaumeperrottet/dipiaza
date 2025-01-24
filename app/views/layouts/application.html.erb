@@ -20,7 +20,12 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% if request.variant == :mobile %>
+      <%= render 'pages/navbar_mobile' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <%= yield %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
