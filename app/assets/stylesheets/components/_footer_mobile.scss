@@ -1,0 +1,67 @@
+.mobile-footer {
+  background-color: #C0392B; /* Rouge vif de Dipiaza */
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  &__info {
+    margin-bottom: 1.5rem;
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 1.5rem;
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.5rem;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 0.9rem;
+
+          &:hover {
+            color: #ecf0f1; /* Gris clair au survol */
+          }
+        }
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    a {
+      font-size: 1.5rem;
+      color: white;
+
+      &:hover {
+        color: #ecf0f1; /* Gris clair au survol */
+      }
+    }
+  }
+
+  &__bottom {
+    font-size: 0.8rem;
+  }
+}
