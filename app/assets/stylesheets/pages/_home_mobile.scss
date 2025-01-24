@@ -126,3 +126,16 @@
     text-decoration: underline;
   }
 }
+
+.address-item__content a {
+  color: #C0392B; /* Rouge vif */
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.address-item__content .fa-phone {
+  margin-right: 5px; /* Espacement entre l'icône et le texte */
+}

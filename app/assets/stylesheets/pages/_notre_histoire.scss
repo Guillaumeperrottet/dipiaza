@@ -27,7 +27,7 @@
 
   .parallax-title-our-story {
     font-size: 3rem;
-    font-family: 'Georgia', serif;
+    font-family: Inter, serif;
     margin-bottom: 0.5rem;
   }
 
@@ -51,6 +51,9 @@
     margin-bottom: 3rem;
     position: relative;
     padding-left: 1.5em;
+    display: flex;
+    margin-bottom: 3rem; // Espacement entre les éléments de la timeline
+    align-items: center; // Assure l’alignement vertical des éléments
 
     &:before {
       content: "";
@@ -69,6 +72,8 @@
     font-weight: bold;
     font-size: 1.2rem;
     color: #C0392B;
+    flex-shrink: 0; // Empêche la date de rétrécir
+    margin-right: 1rem; // Espace entre la date et le texte
   }
 }
 
