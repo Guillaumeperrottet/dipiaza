@@ -16,6 +16,18 @@
   z-index: -1;
 }
 
+.mobile-header__title {
+  font-size: 2rem; /* Taille du texte principal */
+  display: block;
+}
+
+.mobile-header__subtitle {
+  font-size: 1.2rem; /* Taille du sous-titre */
+  margin-top: 0.5rem; /* Espacement entre le titre et le sous-titre */
+  display: block;
+  font-family: 'Lato', sans-serif; /* Une police complémentaire */
+}
+
 .mobile-header__text {
   position: absolute;
   top: 50%;
