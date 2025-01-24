@@ -1,0 +1,46 @@
+<div class="mobile-header">
+  <img src="https://res.cloudinary.com/dafkgjhwt/image/upload/v1737647011/NEW_Logo_Dipiaza_SANS_FOND_2_h2uwhd.png" alt="logo"> class="mobile-header__background">
+  <div class="mobile-header__logo">
+    <img src="app/assets/images/logo_rouge.jpg" alt="Logo Dipiaza">
+  </div>
+</div>
+
+<div class="mobile-addresses">
+  <h2 class="mobile-addresses__title">NOS ADRESSES</h2>
+  <div class="mobile-addresses__list">
+    <div class="address-item">
+      <div class="address-item__header">
+        <h3>Bar 1 - Bulle</h3>
+        <button class="address-item__toggle">+</button>
+      </div>
+      <div class="address-item__content">
+        <p>Rue de Battentin 1, 1630 Bulle</p>
+        <p>Horaires : 08h00 - 18h00</p>
+      </div>
+    </div>
+    <div class="address-item">
+      <div class="address-item__header">
+        <h3>Bar 2 - Lausanne</h3>
+        <button class="address-item__toggle">+</button>
+      </div>
+      <div class="address-item__content">
+        <p>Rue de Lausanne 10, 1003 Lausanne</p>
+        <p>Horaires : 09h00 - 20h00</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.address-item__toggle');
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const parent = toggle.closest('.address-item');
+        parent.classList.toggle('active');
+      });
+    });
+  });
+</script>

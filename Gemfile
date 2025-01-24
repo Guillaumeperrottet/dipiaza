@@ -53,7 +53,7 @@ gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'activestorage', '~> 7.1'
-
+gem 'browser'
 
 
 gem 'pg', group: :production
