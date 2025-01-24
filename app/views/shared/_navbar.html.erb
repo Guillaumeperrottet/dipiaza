@@ -1,7 +1,7 @@
-<nav class="navbar" data-controller="navbar">
+<nav class="navbar <%= 'always-visible' if current_page?(nos_restaurants_path) %>" data-controller="navbar">
   <div class="navbar-logo">
     <%= link_to root_path do %>
-      <%= image_tag("logo_rouge.png", alt: "Dipiaza", class: "logo") %>
+      <%= image_tag("logo_rouge.jpg", alt: "Dipiaza", class: "logo") %>
     <% end %>
   </div>
   <ul class="navbar-links center-links">

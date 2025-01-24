@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 30px;
   background: #ffffff;
   transform: translateY(-100%); /* Navbar cachée initialement */
   transition: transform 0.5s ease-in-out; /* Animation fluide */
@@ -35,7 +34,11 @@
 }
 
 .navbar-logo img {
-  height: 100px;
+  height: 90px;
+  transition: transform 0.3s ease-in-out; /* Animation fluide */
+}
+.navbar-logo img:hover {
+  transform: scale(1.1); /* Agrandit le logo à 120% */
 }
 
 .navbar-links {
@@ -51,20 +54,19 @@
 }
 
 .navbar-links a {
+  font-size: 1rem;
   text-decoration: none;
-  color: #c0392b; /* Texte rouge */
-  font-weight: 600; /* Texte plus gras */
-  font-size: 1rem; /* Taille du texte */
-  padding: 10px 20px; /* Ajoute de l'espace interne */
-  border: 2px solid #c0392b; /* Contour rouge */
-  border-radius: 20px; /* Arrondi des coins */
-    transition: all 0.3s ease-in-out; /* Animation fluide */
+  color: #333;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-links a:hover {
-  background: #c0392b; /* Arrière-plan rouge au survol */
-  color: white; /* Texte blanc au survol */
-  box-shadow: 0px 4px 6px rgba(192, 57, 43, 0.3); /* Ajoute une ombre au survol */
+  background-color: #c0392b;
+  color: white;
 }
 
 .center-links {
@@ -72,4 +74,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar.always-visible {
+  transform: translateY(0); /* Navbar toujours visible */
 }
