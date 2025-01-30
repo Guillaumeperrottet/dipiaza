@@ -9,6 +9,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  font-family: Inter, sans-serif;
+
 
   .parallax-overlay-our-story {
     position: absolute;
@@ -40,20 +42,22 @@
 .container {
   margin-top: 120px; // Augmente le top pour prendre en compte la navbar
   margin-bottom: 80px; // Ajoute de l’espace en bas de la page
+  font-family: Inter, sans-serif;
 }
 
 .timeline {
   margin: 4rem 0;
   border-left: 3px solid #C0392B;
   padding-left: 1.5rem;
+  font-size: 18px;
 
   .timeline-item {
     margin-bottom: 3rem;
     position: relative;
-    padding-left: 1.5em;
+    padding-left: 2.5em;
     display: flex;
     margin-bottom: 3rem; // Espacement entre les éléments de la timeline
-    align-items: center; // Assure l’alignement vertical des éléments
+    // align-items: center; // Assure l’alignement vertical des éléments
 
     &:before {
       content: "";
@@ -70,7 +74,7 @@
 
   .timeline-date {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 21px;
     color: #C0392B;
     flex-shrink: 0; // Empêche la date de rétrécir
     margin-right: 1rem; // Espace entre la date et le texte
@@ -97,4 +101,17 @@
 .img-fluid {
   max-width: 65%;
   height: auto;
+}
+
+.text-center {
+  text-align: center;
+  font-family: Inter, sans-serif;
+}
+
+.img-text {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
