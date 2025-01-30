@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get "nos_valeurs", to: "pages#nos_valeurs"
   get "nos_restaurants", to: "pages#nos_restaurants"
   get "nous_rejoindre", to: "pages#nous_rejoindre"
+  post "nous_rejoindre", to: "pages#submit_nous_rejoindre" # Route POST
+
 end

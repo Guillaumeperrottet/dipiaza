@@ -16,6 +16,12 @@ class PagesController < ApplicationController
   def nous_rejoindre
   end
 
+  def submit_nous_rejoindre
+    # Logique pour traiter le formulaire, par exemple enregistrer les données ou envoyer un email
+    flash[:notice] = "Votre candidature a bien été envoyée !"
+    redirect_to root_path
+  end
+
   private
 
   def set_mobile_view
