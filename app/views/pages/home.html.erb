@@ -71,14 +71,6 @@
   });
 
   document.addEventListener("scroll", () => {
-    const parallaxElements = document.querySelectorAll(".parallax");
-    parallaxElements.forEach((el) => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      el.style.transform = `translateY(${scrollY * 0.1}px)`; // Ajuste le facteur 0.1 pour un effet plus fort ou plus léger
-    });
-  });
-
-  document.addEventListener("scroll", () => {
     const scrollY = window.scrollY || window.pageYOffset; // Position de défilement
     const homepage = document.querySelector(".homepage");
 
