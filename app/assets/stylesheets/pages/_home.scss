@@ -27,8 +27,8 @@
 
     .logo-image img {
         margin-bottom: 200px;
-        margin-right: 37px;
-        width: 100%;
+        margin-left: 510px;
+        width: 40%;
     }
 }
 
@@ -62,29 +62,50 @@
 
 /* Section Nos valeurs */
 .our-values-preview {
-  background-color: #ffffff; // Couleur claire (par exemple beige clair)
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 100px 20px;
   text-align: center;
+  margin-bottom: 200px;
+  margin-top: 200px;
   display: flex;
   align-items: center;
+  color: white;
+  background-image: linear-gradient(#000000bf, #00000000), url('https://res.cloudinary.com/dafkgjhwt/image/upload/v1737561260/AB96E667-A2E9-4A55-B530-3C499E65FAC7_1_201_a_zu6cg0.jpg');
+  background-size: auto, cover;
+  background-attachment: fixed;
+  background-position: center;
 
-  .accent-divider-value {
-    background-color: #C0392B;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 80px;
-    height: 3px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste l'opacité du fond noir */
+    z-index: 0;
   }
 
   .container-our-values{
-    max-width: 400px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: auto;
     text-align: left;
   }
 
+  .accent-divider-value {
+    background-color: #fff;
+    width: 100%;
+    max-width: 80px;
+    height: 3px;
+    text-align: left;
+  }
+
+
   .section-title {
-    font-family: Inter,sans-serif;
-    font-size: 2.5rem;
-    color: #C0392B;
+    font-family: Inter, sans-serif;
+    font-size: 3rem;
+    color: #fff;
     margin-bottom: 1rem;
     text-align: left;
     margin-top: 39px;
@@ -92,9 +113,9 @@
 
   .values-snippet {
     font-family: Inter, sans-serif; // Style élégant et lisible
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.667em;
-    color: #5a5a5a; // Gris neutre pour le texte
+    color: #dadada;
     margin-bottom: 2rem;
     text-align: left;
 
@@ -105,9 +126,10 @@
     font-family: Inter,sans-serif;
     text-decoration: none;
     color: #333;
+    background-color: #fff;
     margin: 10px 0;
     padding: 10px 20px;
-    border: 2px solid #333;
+    border: 2px solid #fff;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 
@@ -116,62 +138,55 @@
       color: white;
     }
   }
-
-  .values-image {
-    position: relative; /* Nécessaire pour positionner le pseudo-élément */
-    display: inline-block;
-
-    img {
-      position: relative; /* L'image est au-dessus du pseudo-élément */
-      z-index: 1;
-      border-radius: 30px; /* Coins arrondis pour l'image */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optionnel */
-      max-width: 65%;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -8%; /* Ajuste selon le positionnement désiré */
-      left: 12%;
-      width: 64%; /* Ajuste la taille par rapport à l'image */
-      height: 100%; /* Idem */
-      background-color: #C0392B; /* Couleur de la forme */
-      border-radius: 30px; /* Coins arrondis pour la forme */
-      z-index: 0; /* Place la forme derrière l'image */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optionnel pour un effet de relief */
-    }
-  }
 }
 
 /* Section Notre histoire */
 .our-story-preview {
-  background-color: #ffffff; // Couleur claire (par exemple beige clair)
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-bottom: 200px;
+  padding: 100px 20px;
+  margin-bottom: 400px;
   text-align: center;
   display: flex;
   align-items: center;
+  color: white;
   justify-content: flex-end;
+  background-image: linear-gradient(#000000bf, #00000000), url('https://res.cloudinary.com/dafkgjhwt/image/upload/v1737637085/background_accueil_1_u5utrf.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  .container-our-story{
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: auto;
+    text-align: right;
+  }
 
   .accent-divider-story {
-    background-color: #C0392B;
+    background-color: #fff;
     width: 100%;
     max-width: 80px;
     height: 3px;
     margin-left: auto;
+    text-align: right;
 }
 
-  .container-our-story{
-    max-width: 400px;
-    text-align: right;
-  }
 
   .section-title {
     font-family: Inter, sans-serif; // Assurez-vous d'importer cette police
-    font-size: 2.5rem;
-    color: #C0392B; // Couleur foncée (par exemple brun)
+    font-size: 3rem;
+    color: #fff;
     margin-bottom: 1rem;
     text-align: right;
     margin-top: 39px;
@@ -179,9 +194,9 @@
 
   .story-snippet {
     font-family: Inter, sans-serif; // Style élégant et lisible
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.667em;
-    color: #5a5a5a; // Gris neutre pour le texte
+    color: #dadada;
     margin-bottom: 2rem;
     text-align: right;
 
@@ -192,9 +207,10 @@
     font-family: Inter,sans-serif;
     text-decoration: none;
     color: #333;
+    background-color: #fff;
     margin: 10px 0;
     padding: 10px 20px;
-    border: 2px solid #333;
+    border: 2px solid #fff;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 
@@ -203,44 +219,6 @@
       color: white;
     }
   }
-
-  .about-image {
-    position: relative; /* Nécessaire pour positionner le pseudo-élément */
-    display: inline-block;
-
-    img {
-      position: relative; /* L'image est au-dessus du pseudo-élément */
-      z-index: 1;
-      border-radius: 30px; /* Coins arrondis pour l'image */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optionnel */
-      max-width: 65%;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -8%; /* Ajuste selon le positionnement désiré */
-      right: 12%;
-      width: 64%; /* Ajuste la taille par rapport à l'image */
-      height: 100%; /* Idem */
-      background-color: #C0392B; /* Couleur de la forme */
-      border-radius: 30px; /* Coins arrondis pour la forme */
-      z-index: 0; /* Place la forme derrière l'image */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optionnel pour un effet de relief */
-    }
-  }
-}
-
-/* Animations pour le scroll */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease-out, transform 0.4s ease-out;
-}
-
-.fade-in-up.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Animation d'apparition depuis le bas */
