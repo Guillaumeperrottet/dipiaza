@@ -64,17 +64,6 @@
     });
   });
 
-  document.addEventListener("scroll", () => {
-    // Désactive l'effet si l'écran est inférieur à 768px (mobile)
-    if (window.innerWidth <= 768) return;
-
-    const parallaxElements = document.querySelectorAll(".parallax");
-    parallaxElements.forEach((el) => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      el.style.transform = `translateY(${scrollY * 0.1}px)`;
-    });
-  });
-
 
   document.addEventListener("scroll", () => {
     const scrollY = window.scrollY || window.pageYOffset; // Position de défilement
